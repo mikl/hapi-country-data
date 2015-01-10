@@ -4,6 +4,7 @@
   "description": "Hapi.js plugin providing REST endpoints to dig into country data. Useful if you want your web application to have a country or currency picker, for example.",
   "main": "index.js",
   "scripts": {
+    "testserver": "node test/testserver.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,9 @@
   "homepage": "https://github.com/mikl/hapi-country-data",
   "dependencies": {
     "hoek": "^2.11.0"
+  },
+  "devDependencies": {
+    "hapi": "^8.1.0",
+    "pre-commit": "0.0.9"
   }
 }
