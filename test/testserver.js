@@ -5,10 +5,6 @@ var Hapi = require('hapi');
 
 var server = new Hapi.Server({});
 
-server.connection({
-  port: 7752
-});
-
 // Add the country data plugin.
 server.register(require('../index'), function (err) {
   if (err) { throw err; }
@@ -16,8 +12,12 @@ server.register(require('../index'), function (err) {
 
 module.exports = server;
 
-// If this file is being run directly, start the server.
+// If this file is being run directly, start the server on port 7400.
 if (require.main === module) {
+  server.connection({
+    port: 7400
+  });
+
   server.start(function () {
     console.info('hapi-country-data server started at ' + server.info.uri);
   });
